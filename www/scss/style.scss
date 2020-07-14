@@ -1,0 +1,92 @@
+/*** Mixins & Default Styles ***/
+@mixin object($width, $height, $bg) {
+	width: $width;
+	height: $height;
+	background: $bg;
+}
+@mixin transPos($top, $right, $bottom, $left,$transX,$transY) {
+	position: absolute;
+	top: $top;
+	left: $left;
+	right: $right;
+	bottom: $bottom;
+	transform:translate($transX,$transY);
+}
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+::-webkit-scrollbar{
+	display: none;
+}
+
+/*** Color Variables ***/
+$pink: #FA6C98;
+$aqua: #79EDFC;
+$accent: #fff;
+
+/*** Centering Hack ***/
+@mixin center {
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+
+
+
+/*** Hero Section Styles ***/
+#hero-section {
+	@include object(100vw,calc(100vh - 160px),null);
+	@include center;
+	margin-top: 160px;
+}
+
+#head-line {
+	@include object(520px,30px,$accent);
+	border-radius:90px;
+	position:relative;
+	&:before,
+	&:after {
+		content:'';
+		height:30px;
+		border-radius:90px;
+	}
+	&:before {
+		@include object(360px,null,$accent);
+		@include transPos(-60px,null,null,50%,-50%,0);
+	}
+	&:after {
+		@include object(200px,null,$accent);
+		@include transPos(null,null,-60px,50%,-50%,0);
+	}
+}
+
+/*** Section Styles ***/
+section {
+	@include object(100vw,calc(100vh - 100px),null);
+	display:flex;
+	justify-content:center;
+	&:nth-child(odd){
+		background: $pink;
+	}
+	&:nth-child(even){
+		background: $aqua;
+	}
+}
+
+#heading {
+	@include object(120px,20px,$accent);
+	border-radius:90px;
+	margin-top: 40px;
+}
+
+/*** Responsive Menu For Smaller Device ***/
+
+@media screen and (max-width:767px){
+	#head-line {
+		transform:scale(0.8);
+	}
+}
+
+

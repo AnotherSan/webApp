@@ -1,0 +1,9 @@
+{
+  "name": "URFU_ACTIVE1",
+  "dependencies": {
+    "bootstrap": "v4.3.1"
+  },
+  "resolutions": {
+    "bootstrap": "v4.3.1"
+  }
+}
