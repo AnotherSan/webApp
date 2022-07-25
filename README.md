@@ -1,2 +1,2 @@
 # webApp
-Web application for getting acquainted with URFU activities
+Веб-приложение на PhoneGap для ознакомления с деятельностью ИРИТ-РТФ для абитуриентов.
